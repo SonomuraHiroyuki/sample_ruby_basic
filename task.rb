@@ -133,7 +133,11 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
+  datas = []
+  data.each_key do |key|
+    datas << key
+  end
+  puts datas
 end
 
 def q15
@@ -141,7 +145,36 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
+      
+  puts <<~TEXT
+      data1 = #{data1}
+      TEXT
+    if data1.key?(:age)
+      puts <<~TEXT
+      #実行結果
+      OK
+      TEXT
+    else
+      puts <<~TEXT
+      #実行結果
+      NG
+      TEXT
+    end
 
+  puts <<~TEXT
+      data2 = #{data1}
+      TEXT
+    if data2.key?(:age)
+      puts <<~TEXT
+      #実行結果
+      OK
+      TEXT
+    else
+      puts <<~TEXT
+      #実行結果
+      NG
+      TEXT
+    end
 end
 
 def q16
@@ -153,6 +186,10 @@ def q16
   ]
 
   # 以下に回答を記載
+  users.each do |user|
+    puts "私の名前は#{user[:name]}です。年齢は#{user[:age]}歳です。"
+  end
+
 
 end
 
