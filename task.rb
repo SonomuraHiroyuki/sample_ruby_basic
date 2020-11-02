@@ -116,8 +116,7 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-  data = data[:user]
-  puts data[:name]
+  puts data[:user][:name]
 end
 
 def q13
@@ -125,7 +124,7 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  user_data = user_data.merge(update_data)
+  user_data.merge!(update_data)
   puts user_data
 end
 
@@ -133,11 +132,7 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-  datas = []
-  data.each_key do |key|
-    datas << key
-  end
-  puts datas
+  puts data.keys
 end
 
 def q15
@@ -146,35 +141,11 @@ def q15
 
   # 以下に回答を記載
       
-  puts <<~TEXT
-      data1 = #{data1}
-      TEXT
-    if data1.key?(:age)
-      puts <<~TEXT
-      #実行結果
-      OK
-      TEXT
-    else
-      puts <<~TEXT
-      #実行結果
-      NG
-      TEXT
-    end
+    puts "data1 = #{data1}"
+    (data1.has_key?(:age)) ? (puts "#実行結果\nOK") : (puts "#実行結果\nNG")
 
-  puts <<~TEXT
-      data2 = #{data1}
-      TEXT
-    if data2.key?(:age)
-      puts <<~TEXT
-      #実行結果
-      OK
-      TEXT
-    else
-      puts <<~TEXT
-      #実行結果
-      NG
-      TEXT
-    end
+    puts "data2 = #{data2}"
+    (data2.has_key?(:age)) ? (puts "#実行結果\nOK") : (puts "#実行結果\nNG")
 end
 
 def q16
