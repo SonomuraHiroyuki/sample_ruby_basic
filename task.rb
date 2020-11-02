@@ -141,11 +141,8 @@ def q15
 
   # 以下に回答を記載
       
-    puts "data1 = #{data1}"
-    (data1.has_key?(:age)) ? (puts "#実行結果\nOK") : (puts "#実行結果\nNG")
-
-    puts "data2 = #{data2}"
-    (data2.has_key?(:age)) ? (puts "#実行結果\nOK") : (puts "#実行結果\nNG")
+    puts data1.has_key?(:age) ? "OK" : "NG"
+    puts data2.has_key?(:age) ? "OK" : "NG"
 end
 
 def q16
