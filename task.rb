@@ -163,7 +163,17 @@ end
 
 class UserQ17
   # 以下に回答を記載
+  def initialize(name="")
+    @name = name
+  end
 
+  def info
+    print <<~TEXT
+      名前:#{@name[:name]}
+      年齢:#{@name[:age]}
+      性別:#{@name[:gender]}
+    TEXT
+  end
 end
 
 def q17
@@ -178,7 +188,21 @@ end
 
 class UserQ18
   # 以下に回答を記載
+    def initialize(name="")
+    @name = name
+  end
 
+  def introduce
+    if @name[:age] >= 20
+      print <<~TEXT
+        こんにちは，#{@name[:name]}と申します。宜しくお願いいたします。
+      TEXT
+    else
+      print <<~TEXT
+        はいさいまいど〜，#{@name[:name]}です！！！
+      TEXT
+    end
+  end
 end
 
 def q18
@@ -195,6 +219,10 @@ class Item
 
   def initialize(name)
     @name = name
+  end
+
+  def name
+    print @name[:name]
   end
 end
 
