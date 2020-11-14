@@ -163,15 +163,18 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  def initialize(name="")
-    @name = name
+  def initialize(name:,age:,gender:)
+    @name   = "#{name}"
+    @age    = "#{age}"
+    @gender = "#{gender}"
+
   end
 
   def info
     print <<~TEXT
-      名前:#{@name[:name]}
-      年齢:#{@name[:age]}
-      性別:#{@name[:gender]}
+      名前:#{@name}
+      年齢:#{@age}
+      性別:#{@gender}
     TEXT
   end
 end
@@ -188,19 +191,16 @@ end
 
 class UserQ18
   # 以下に回答を記載
-    def initialize(name="")
-    @name = name
+    def initialize(name:,age:)
+    @name = "#{name}"
+    @age = "#{age}"
   end
 
   def introduce
-    if @name[:age] >= 20
-      print <<~TEXT
-        こんにちは，#{@name[:name]}と申します。宜しくお願いいたします。
-      TEXT
+    if "#{@age}" >= "20"
+        "こんにちは，#{@name}と申します。宜しくお願いいたします。"
     else
-      print <<~TEXT
-        はいさいまいど〜，#{@name[:name]}です！！！
-      TEXT
+        "はいさいまいど〜，#{@name}です！！！"
     end
   end
 end
